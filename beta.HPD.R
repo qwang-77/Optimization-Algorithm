@@ -14,7 +14,7 @@ beta.lower <- function (lam, alpha, beta, max.iter=100, precision=1e-8) {
   
   # initialize 
   intv <- c(0, mod) 
-  g <- dgamma(intv, alpha, beta) - lam 
+  g <- dbeta(intv, alpha, beta) - lam 
   if(g[1] * g[2] > 0) 
     stop("error in beta.lower, bad initialize value")
   
@@ -63,7 +63,7 @@ beta.higher <- function (lam, alpha, beta, max.iter=100, precision=1e-8) {
   
   # initialize 
   intv <- c(mod,1) 
-  g <- dgamma(intv, alpha, beta) - lam 
+  g <- dbeta(intv, alpha, beta) - lam 
   if(g[1] * g[2] > 0) 
     stop("error in beta.lower, bad initialize value")
   
